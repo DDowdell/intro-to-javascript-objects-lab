@@ -44,12 +44,39 @@ Exercise 4
 Solve Exercise 4 here:
 */
 
-// console.log(pokemon[24])
-// console.log(pokemon.name = 'Pikachu')
 
-let starterPokemon = pokemon[24]
-game.party.push(starterPokemon)
+
+const selectPokemon = (pokemonName) => {
+    for (let singlePokemon of pokemon) {
+        if (singlePokemon.name === pokemonName) {
+            return singlePokemon;
+        }
+    }
+}
+
+game.party.push(selectPokemon('Pikachu'))
 
 console.log(game)
+
+/*
+Exercise 5
+1. Choose three more Pokémon from the `pokemon` array and add them to your party.
+2. Consider different attributes like 'type' or 'HP' for your selection. Which array method will you use to add them?
+
+
+Solve Exercise 5 here:
+*/
+
+// function pushSelectedPokemon(pokemon, party, game) {
+//     pokemon.array.forEach(name => {
+//         if (game(name)) {
+//             party.push(name);
+//         }
+//     });
+// }
+
+game.party.push(selectPokemon('Bulbasaur'), selectPokemon('Charmander'), selectPokemon('Squirtle'))
+
+console.log(game);
 
 
