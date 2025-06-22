@@ -87,9 +87,6 @@ Exercise 6
 
 Solve Exercise 6 here:
 */
-function updateGyms() {
-    const gyms = game.gyms
-}
 
 game.gyms.forEach(gym => {
     if (gym.difficulty < 3) {
@@ -98,4 +95,47 @@ game.gyms.forEach(gym => {
 });
 
 console.log('Completed Gyms', (game.gyms));
+
+/*
+Exercise 7
+1. Evolve the starter Pokémon you added to your party earlier. Each starter Pokémon evolves into a specific one.
+2. How would you replace the current starter Pokémon in your party with its evolved form?
+
+Hint: 
+  - Pokemon 1: Bulbasaur evolves into Pokemon 2: Ivysaur
+  - Pokemon 4: Charmander evolves into Pokemon 5: Charmeleon
+  - Pokemon 7: Squirtle evolves into Pokemon 8: Wartortle
+  - Pokemon 25: Pikachu evolves into Pokemon 26: Raichu
+
+More Hints: The existing starter Pokemon will be *replaced* in your party with the Pokemon it evolved into.
+When working with an array of objects, the splice() array method is ideal for replacing one element with another. 
+
+
+Solve Exercise 7 here:
+*/
+
+function evolve(trainedPokemon) {
+    const evolution = {
+        'Pikachu': 'Raichu',
+        'Bulbasaur': 'Ivysaur',
+        'Charmander': 'Charmeleon',
+        'Squirtle': 'Wartortle'
+    };
+
+    const pokemonEvolved = evolution[trainedPokemon];
+    if (pokemonEvolved) {
+        const pokemonList = game.party.findIndex(p => p.name === trainedPokemon);
+        if (pokemonList >= 0) {
+            const evolvedPokemon = pokemon.find(p => p.name === pokemonEvolved);
+            if (evolvedPokemon) {
+                game.party.splice(pokemonList, 1, evolvedPokemon);
+                console.log(`${trainedPokemon} evolved into ${evolvedPokemon.name}!`);
+            }
+        }
+    }
+  }
+
+evolve('Charmander');
+console.log(game.party);
+
 
