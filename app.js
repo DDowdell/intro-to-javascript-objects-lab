@@ -153,4 +153,26 @@ function listMyPokemon() {
 }
 
 const caught = listMyPokemon();
-console.log('My pokemon are', (caught))
+console.log('My pokemon are:', (caught))
+
+
+/*
+Exercise 9
+1. Can you print out all the starter Pokémon from the `pokemon` array?
+2. Think about how you can identify a starter Pokémon and then log their names.
+
+
+Solve Exercise 9 here:
+*/
+
+function listStarterPokemon() {
+
+  const theStarters = pokemon
+    .filter(pokemon => pokemon.starter)
+    .map(pokemon => pokemon.name);
+
+  return theStarters;
+}
+
+const OGs = listStarterPokemon();
+console.log('The starters are:', OGs);
