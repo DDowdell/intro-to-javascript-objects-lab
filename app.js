@@ -284,23 +284,42 @@ the logged value would be: `{ completed: 5, incomplete: 3 }`.
 Solve Exercise 13 here:
 */
 
-game.gymStatus = function() {
-  const gymTally = {
-    completed: 0,
-    incomplete: 0
-  };
+// game.gymStatus = function() {
+//   const gymTally = {
+//     completed: 0,
+//     incomplete: 0
+//   };
+// }
+
+// this.gyms.forEach(gym => {
+//   if (gym.completed) {
+//     gymTally.completed += 1;
+//   } else {
+//     gymTally.incomplete += 1;
+//   }
+// });
+
+// game.gymStatus();
+// console.log("Completed Gyms: " + gymTally.completed);
+// console.log("Completed Gyms: " + gymTally.incomplete);
+
+
+/*
+Exercise 14
+1. Add a `partyCount` method to `game` that counts the number of Pokémon in your party.
+
+This method should:
+  - Not accept any arguments.
+  - Count the number of Pokemon in the party.
+  - return the found number of Pokemon in the party.
+
+Solve Exercise 14 here:
+*/
+
+countPokemon = function(party) {
+  return party.length;
 }
-
-this.gyms.forEach(gym => {
-  if (gym.completed) {
-    gymTally.completed += 1;
-  } else {
-    gymTally.incomplete += 1;
-  }
-});
-
-game.gymStatus();
-console.log("Completed Gyms: " + gymTally.completed);
-console.log("Completed Gyms: " + gymTally.incomplete);
+const myParty = countPokemon(game.party);
+console.log('How many I have: ', + myParty);
 
 
